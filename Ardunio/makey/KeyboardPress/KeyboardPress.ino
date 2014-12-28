@@ -20,31 +20,22 @@
  http://www.arduino.cc/en/Tutorial/KeyboardMessage
  */
 
-const int buttonPin = 2;          // input pin for pushbutton
-int previousButtonState = HIGH;   // for checking the state of a pushButton
-int counter = 0;                  // button push counter
-
 void setup() {
   // make the pushButton pin an input:
-  pinMode(buttonPin, INPUT);
   // initialize control over the keyboard:
   Keyboard.begin();
 }
 
 void loop() {
   // read the pushbutton:
-  int buttonState = digitalRead(buttonPin);
+  int sensorValue = analogRead(A2);
   // if the button state has changed, 
-  if ((buttonState != previousButtonState) 
-    // and it's currently pressed:
-  && (buttonState == HIGH)) {
+  if ((sensorValue > 0)) {
     // increment the button counter
     // type out a message
     Keyboard.press('a');
-    delay(100);
+    delay(10);
     Keyboard.releaseAll();
   }
-  // save the current button state for comparison next time:
-  previousButtonState = buttonState; 
 }
 
