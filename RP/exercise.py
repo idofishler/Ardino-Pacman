@@ -7,6 +7,7 @@ from static_funcs import distance
 from static_funcs import beep_func
 from static_funcs import debug_print
 from static_funcs import init_func
+import Sound
 
 # Which GPIO's are used (The ones you connected)
 # ----------------------------------------------------------------------
@@ -19,7 +20,7 @@ GPIO_TRIG = XXX
 EXIT = 0                        # Infinite loop
 loop_sleep = 1                  # sleep period between loops
 # Seperate process that play the bg music
-proc = subprocess.Popen("echo")
+sound = Sound()
 
 
 # Go
@@ -38,15 +39,15 @@ while EXIT == 0:
     # - STEP 2) Call to the distance function with your values
     mesured_distance = XXX
     print "Distance = " + str(mesured_distance) + "cm"
-    alive = proc.poll()
+    alive = sound.isAlive()
     # - STEP 3) Set the threshold for the song to start playing
     if mesured_distance < XXX:
         print "Start me" + "alive is " + str(alive)
         if alive is not None:
             print "Start me" + "alive is " + str(alive)
-            proc = subprocess.Popen(["/usr/bin/aplay", "/home/pi/VC/CSH6XuazmB8.wav"])
+            sound.play()
     elif alive is None:
-            subprocess.Popen.kill(proc)
+            sound.kill()
 
     time.sleep(loop_sleep)
 
