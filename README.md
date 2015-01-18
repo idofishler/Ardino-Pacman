@@ -1,4 +1,5 @@
-Ardino-Pacman
+SAP DKOM raspberri Pi + Arduino hands on booth
 =============
 
-Play Pacman with your fingers
+* Ardino - Play Pacman with your fingers
+* Raspberri Pi - Play music using hand guesstures
