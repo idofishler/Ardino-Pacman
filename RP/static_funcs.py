@@ -9,6 +9,12 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
+# A couple of variables
+# ---------------------
+GPIO_ECHO_BEEP = 22
+GPIO_TRIG_BEEP = 27
+
+
 def distance(GPIO_ECHO,GPIO_TRIG):
     debug_print ("GPIO_TRIG = " + str(GPIO_TRIG) + ",GPIO_ECHO = " + str(GPIO_ECHO))
     # Set GPIO Channels
