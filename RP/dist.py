@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import time, os, subprocess, multiprocessing
-import RPi.GPIO as GPIO
 
 from static_funcs import distance
 from static_funcs import beep_func
 from static_funcs import debug_print
-
+from static_funcs import init_func
 
 # Which GPIO's are used [0]=BCM Port Number [1]=BCM Name [2]=Use [3]=Pin
 # ----------------------------------------------------------------------
@@ -22,15 +21,9 @@ loop_sleep = 1                  # sleep period between loops
 proc = subprocess.Popen("echo")
 
 
-# Wait for 2 seconds to allow the ultrasonics to settle (probably not needed)
-# ---------------------------------------------------------------------------
-print "Waiting for 2 seconds....."
-time.sleep(2)
-
-
 # Go
 # --
-print "Running....\nStart Beep process...."
+init_func()
 beep_proc = multiprocessing.Process(target=beep_func)
 beep_proc.start()
 

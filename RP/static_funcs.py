@@ -9,18 +9,32 @@
 # Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
+import time, os, subprocess, multiprocessing
+import RPi.GPIO as GPIO
+
 # A couple of variables
 # ---------------------
 GPIO_ECHO_BEEP = 22
 GPIO_TRIG_BEEP = 27
-debug = False                   # debug mode for console output
+#debug = False                   # debug mode for console output
+debug = True                   # debug mode for console output
+first_iter = True
 
+def init_func():
+    # Wait for 2 seconds to allow the ultrasonics to settle (probably not needed)
+    # ---------------------------------------------------------------------------
+    print "Waiting for 2 seconds....."
+    time.sleep(2)
 
+    # Go
+    # --
+    print "Running....\nStart Beep process...."
+    GPIO.setmode(GPIO.BCM)
+    
 def distance(GPIO_ECHO,GPIO_TRIG):
     debug_print ("GPIO_TRIG = " + str(GPIO_TRIG) + ",GPIO_ECHO = " + str(GPIO_ECHO))
     # Set GPIO Channels
     # -----------------
-    GPIO.setmode(GPIO.BCM)
     GPIO.setup(GPIO_ECHO, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(GPIO_TRIG, GPIO.OUT)
     GPIO.output(GPIO_TRIG, False)
