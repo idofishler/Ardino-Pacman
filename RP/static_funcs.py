@@ -14,8 +14,6 @@ import RPi.GPIO as GPIO
 
 # A couple of variables
 # ---------------------
-GPIO_ECHO_BEEP = 22
-GPIO_TRIG_BEEP = 27
 #debug = False                   # debug mode for console output
 debug = True                   # debug mode for console output
 first_iter = True
@@ -102,9 +100,12 @@ def debug_print(line,must_print = False):
 
 def beep_func(printOutput = True, GPIO_ECHO_INPUT = None ):
     while True:
-        if GPIO_ECHO_INPUT == None:
+        if GPIO_ECHO_INPUT != None:
             GPIO_ECHO_BEEP = [0]
             GPIO_TRIG_BEEP = [1]
+        else:
+            GPIO_ECHO_BEEP = 22
+            GPIO_TRIG_BEEP = 27
         calc_dist = distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
         print "BEEP dist is: " + str(calc_dist)
         if calc_dist < 60:
