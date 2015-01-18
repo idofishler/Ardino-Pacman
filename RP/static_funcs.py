@@ -30,7 +30,7 @@ def init_func():
     # --
     print "Running....\nStart Beep process...."
     GPIO.setmode(GPIO.BCM)
-    
+
 def distance(GPIO_ECHO,GPIO_TRIG):
     debug_print ("GPIO_TRIG = " + str(GPIO_TRIG) + ",GPIO_ECHO = " + str(GPIO_ECHO))
     # Set GPIO Channels
@@ -100,8 +100,11 @@ def debug_print(line,must_print = False):
     if debug or must_print:
         print line
 
-def beep_func():
+def beep_func(printOutput = True, GPIO_ECHO_INPUT = None ):
     while True:
+        if GPIO_ECHO_INPUT == None:
+            GPIO_ECHO_BEEP = [0]
+            GPIO_TRIG_BEEP = [1]
         calc_dist = distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
         print "BEEP dist is: " + str(calc_dist)
         if calc_dist < 60:
