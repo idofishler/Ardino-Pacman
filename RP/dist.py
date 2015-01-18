@@ -17,7 +17,6 @@ GPIO_TRIG = 4
 # A couple of variables
 # ---------------------
 EXIT = 0                        # Infinite loop
-debug = False                   # debug mode for console output
 loop_sleep = 1                  # sleep period between loops
 # Seperate process that play the bg music
 proc = subprocess.Popen("echo")

@@ -13,6 +13,7 @@
 # ---------------------
 GPIO_ECHO_BEEP = 22
 GPIO_TRIG_BEEP = 27
+debug = False                   # debug mode for console output
 
 
 def distance(GPIO_ECHO,GPIO_TRIG):
