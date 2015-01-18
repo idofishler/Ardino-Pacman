@@ -74,3 +74,19 @@ def distance(GPIO_ECHO,GPIO_TRIG):
 
         EXIT +=1
         return min_dist
+
+def debug_print(line,must_print = False):
+    if debug or must_print:
+        print line
+
+def beep_func():
+    while True:
+        calc_dist = distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
+        print "BEEP dist is: " + str(calc_dist)
+        if calc_dist < 60:
+            cmd = "(speaker-test -t sine -f " + str(75*calc_dist) + " -l 1 -p 1024 -P 4 > /dev/null)& pid=$!; sleep 0.25s; kill -9 $pid"
+            print cmd
+            os.system(cmd)
+        time.sleep(0.1)
+
+
