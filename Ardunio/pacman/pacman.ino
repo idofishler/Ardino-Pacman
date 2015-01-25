@@ -26,37 +26,17 @@ void loop() {
   int sensorRight = analogRead(A1);
 
   // more arrows reads goes here:
-  int sensorLeft = analogRead(A2);
-  int sensorUp = analogRead(A3);
-  int sensorDown = analogRead(A4);
+  // TODO: compleate me...
   // did you get all 4 directions?
 
   // if sensor get any current -> something must be touching it, right?
-  if ((sensorLeft > 0)) {
-    // press the left arrow
-    Keyboard.press(KEY_LEFT_ARROW); 
-    delay(10);
-  }
-
-  // TODO: remove from here
-
   if ((sensorRight > 0)) {
-    Keyboard.press(KEY_RIGHT_ARROW);    
+    // press the left arrow
+    Keyboard.press(KEY_RIGHT_ARROW); 
     delay(10);
-    
-  }
-  if ((sensorDown > 0)) {
-    Keyboard.press(KEY_DOWN_ARROW);    
-    delay(10);
-    
-  }
-  if ((sensorUp > 0)) {
-    Keyboard.press(KEY_UP_ARROW);
-    delay(10);
-    
   }
 
-  // TODO: remove up to here
+  // TODO: add more arrows here
 
   // release the keyboard press press
   Keyboard.releaseAll();
