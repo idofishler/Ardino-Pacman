@@ -7,9 +7,7 @@ General
 The goal of this exercise is to create a pacman controller using a pencil and paper.
 
 How? We will use the electricity in our fingers. You will draw four arrows: <-, ^, ->, v. The lead from the pencil is a semi-conductor. When you press on an arrow, detect it with the Arduino controller and fake the keyboard button accordingly.
-
 Steps
------
 
 1. Draw / Create your arrows (use pencil and paper, vegetables or plasteline). Make sure you can reach each arrow with a cable.
 2. Connect the Arduino as discibed in the following [diagram](resources/pacman-arduino-skatch.png)
