@@ -11,9 +11,10 @@ How? We will use the electricity in our fingers. You will use fruit as your four
 Steps
 -----
 
-1. Draw / Create your arrows (use pencil and paper, vegetables or plasteline). Make sure you can reach each arrow with a cable.
+1. Draw / Create your arrows (use the vegetables or anything else). Make sure you can reach each arrow with a cable.
 2. Connect the Arduino as described in the following [diagram](resources/pacman-arduino-skatch.png)
 	* What we want to do is use the semi-conductors and keys for our keyboard.
+	* The arrows are connected to the ground (via a 10k resistor) such that when you're not touching it, it zero out.
 3. Complete the code in the Arduino IDE
 	* Arduino comes with a build in framework that runs C/C++ code.
 	* Any Arduino program has a `setup()` and `loop()` functions. `setup()` is called once and `loop()` is called all the time (like a `while(true)` loop).
