@@ -1,26 +1,31 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import time, os, subprocess, multiprocessing
 
 from static_funcs import distance
-from static_funcs import beep_func
 from static_funcs import debug_print
 from static_funcs import init_func
 
-# Which GPIO's are used (The ones you connected)
-# ----------------------------------------------------------------------
-# - STEP 1) define your  values
-GPIO_ECHO = XXX
-GPIO_TRIG = XXX
-
+def beep_func(printOutput = True, GPIO_ECHO_INPUT = None ):
+    # - STEP 1) define your  values
+    GPIO_ECHO_BEEP = XXX
+    GPIO_TRIG_BEEP = XXX
+    while True:        
+        # - STEP 2) Call to the distance function with your values
+        # distance prototype is distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
+        calc_dist = XXX
+        # - STEP 3) Set thr desired distance to start beeping
+        if calc_dist < XXX:
+            cmd = "(speaker-test -t sine -f " + str(75*calc_dist) + " -l 1 -p 1024 -P 4 > /dev/null)& pid=$!; sleep 0.25s; kill -9 $pid"
+            os.system(cmd)
+        time.sleep(0.1)
+        
 # A couple of variables
 # ---------------------
 EXIT = 0                        # Infinite loop
-loop_sleep = 1                  # sleep period between loops
+loop_sleep = 5                  # sleep period between loops
 # Seperate process that play the bg music
 proc = subprocess.Popen("echo")
-
 
 # Go
 # --
@@ -33,22 +38,12 @@ beep_proc.start()
 # -----------------
 while EXIT == 0:
 
-    # distance func prototype
-    # def distance(GPIO_ECHO,GPIO_TRIG)
-    # - STEP 2) Call to the distance function with your values
-    mesured_distance = XXX
-    print "Distance = " + str(mesured_distance) + "cm"
     alive = proc.poll()
-    # - STEP 3) Set the threshold for the song to start playing
-    if mesured_distance < XXX:
+    if alive is not None:
         print "Start me" + "alive is " + str(alive)
-        if alive is not None:
-            print "Start me" + "alive is " + str(alive)
-            proc = subprocess.Popen(["/usr/bin/aplay", "/home/pi/VC/CSH6XuazmB8.wav"])
-    elif alive is None:
-            subprocess.Popen.kill(proc)
-
+        proc = subprocess.Popen(["/usr/bin/aplay", "/home/pi/VC/CSH6XuazmB8.wav"])
     time.sleep(loop_sleep)
-
+    
+subprocess.Popen.kill(proc)
 beep_proc.terminate()
 

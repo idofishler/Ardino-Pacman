@@ -14,8 +14,8 @@ import RPi.GPIO as GPIO
 
 # A couple of variables
 # ---------------------
-#debug = False                   # debug mode for console output
-debug = True                   # debug mode for console output
+debug = False                   # debug mode for console output
+#debug = True                   # debug mode for console output
 first_iter = True
 
 def init_func():
