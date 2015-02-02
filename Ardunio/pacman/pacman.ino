@@ -23,7 +23,7 @@
 
 void loop() {
   // read the input from your custom arrows a.k.a -> "sensors":
-  int sensorRight = analogRead(A1);
+  int sensorRight = analogRead(A1); // "A1" - is the A1 analog input on the Arduino. you may chage this according to your wiering
 
   // more arrows reads goes here:
   // TODO: compleate me...
