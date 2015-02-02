@@ -8,13 +8,13 @@ from static_funcs import init_func
 
 def beep_func(printOutput = True, GPIO_ECHO_INPUT = None ):
     # - STEP 1) define your  values
+    #           Replace the XXX with your numbers
     GPIO_ECHO_BEEP = XXX
     GPIO_TRIG_BEEP = XXX
     while True:        
-        # - STEP 2) Call to the distance function with your values
-        # distance prototype is distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
-        calc_dist = XXX
-        # - STEP 3) Set thr desired distance to start beeping
+        calc_dist = distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
+        # - STEP 2) Set the desired distance at cm to start beeping
+        #           Replace the XXX with your number
         if calc_dist < XXX:
             cmd = "(speaker-test -t sine -f " + str(75*calc_dist) + " -l 1 -p 1024 -P 4 > /dev/null)& pid=$!; sleep 0.25s; kill -9 $pid"
             os.system(cmd)
@@ -41,7 +41,7 @@ while EXIT == 0:
     alive = proc.poll()
     if alive is not None:
         print "Start me" + "alive is " + str(alive)
-        proc = subprocess.Popen(["/usr/bin/aplay", "/home/pi/VC/CSH6XuazmB8.wav"])
+        proc = subprocess.Popen(["/usr/bin/aplay", "/home/pi/SAP-dokm-handson/RP/background150.wav"])
     time.sleep(loop_sleep)
     
 subprocess.Popen.kill(proc)
