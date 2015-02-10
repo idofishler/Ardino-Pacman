@@ -8,14 +8,15 @@ from static_funcs import init_func
 
 def beep_func(printOutput = True, GPIO_ECHO_INPUT = None ):
     # - STEP 1) define your  values
-    #           Replace the XXX with your numbers
-    GPIO_ECHO_BEEP = XXX
-    GPIO_TRIG_BEEP = XXX
+    #           Replace the XX with your numbers
+    GPIO_ECHO_BEEP = XX
+    GPIO_TRIG_BEEP = YY
     while True:        
         calc_dist = distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
-        # - STEP 2) Set the desired distance at cm to start beeping
-        #           Replace the XXX with your number
-        if calc_dist < XXX:
+    # - STEP 2) Set the desired distance in cm to start beeping
+    #           Replace the XX with your number
+    #           Recommended values 35-70
+        if calc_dist < XX:
             cmd = "(speaker-test -t sine -f " + str(75*calc_dist) + " -l 1 -p 1024 -P 4 > /dev/null)& pid=$!; sleep 0.25s; kill -9 $pid"
             os.system(cmd)
         time.sleep(0.1)
