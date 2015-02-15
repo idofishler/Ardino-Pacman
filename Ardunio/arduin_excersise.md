@@ -22,4 +22,4 @@ Steps
 		2. Press the required key using the `Keyboard` API
 		3. See more instructions and examples in the code.
 4. Upload the code to the Arduino controller by pressing the *upload* button
-5.	Play pacman [pacman](http://files.widgetbox.com/widgets/neave/neave_pacman_widgetbox.swf) :)
+5.	Play pacman [pacman](resources\neave_pacman_widgetbox.swf) :)
