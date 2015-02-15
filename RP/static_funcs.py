@@ -14,8 +14,8 @@ import RPi.GPIO as GPIO
 
 # A couple of variables
 # ---------------------
-#debug = False                   # debug mode for console output
-debug = True                   # debug mode for console output
+debug = False                   # debug mode for console output
+#debug = True                   # debug mode for console output
 first_iter = True
 
 def init_func():
@@ -104,13 +104,13 @@ def beep_func(printOutput = True, GPIO_ECHO_INPUT = None ):
             GPIO_ECHO_BEEP = [0]
             GPIO_TRIG_BEEP = [1]
         else:
-            GPIO_ECHO_BEEP = 22
+            GPIO_ECHO_BEEP = 26
             GPIO_TRIG_BEEP = 27
         calc_dist = distance(GPIO_ECHO_BEEP,GPIO_TRIG_BEEP)
         print "BEEP dist is: " + str(calc_dist)
         if calc_dist < 60:
             cmd = "(speaker-test -t sine -f " + str(75*calc_dist) + " -l 1 -p 1024 -P 4 > /dev/null)& pid=$!; sleep 0.25s; kill -9 $pid"
-            print cmd
+            debug_print(cmd)
             os.system(cmd)
         time.sleep(0.1)
 

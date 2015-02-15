@@ -4,7 +4,6 @@ Arduino pacman exercise
 General
 -------
 
-The goal of this exercise is to create a pacman controller using fruit as your keyboard arrows.
 
 How? We will use the electricity in our fingers. You will use fruit as your four arrows: <-, ^, ->, v. You may actually use anything you like (be creative) as long as it’s a semi-conductor. When you press on an arrow, detect it with the Arduino controller and fake the keyboard button accordingly.
 
