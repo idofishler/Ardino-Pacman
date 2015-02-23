@@ -30,8 +30,8 @@ void loop() {
   // did you get all 4 directions?
 
   // if sensor get any current -> something must be touching it, right?
-  if ((sensorRight > 0)) {
-    // press the left arrow
+  if ((sensorRight > 20)) {
+    // press the right arrow
     Keyboard.press(KEY_RIGHT_ARROW); 
     delay(10);
   }
