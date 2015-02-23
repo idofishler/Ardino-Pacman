@@ -868,11 +868,11 @@ body .markdown-body
 <h2>
 <a id="user-content-general" class="anchor" href="#general" aria-hidden="true"><span class="octicon octicon-link"></span></a>General</h2>
 
-<p>How? We will use the electricity in our fingers. You will use fruit 
-as your four arrows: &lt;-, ^, -&gt;, v. You may actually use anything 
-you like (be creative) as long as it’s a semi-conductor. When you press 
-on an arrow, detect it with the Arduino controller and fake the keyboard
- button accordingly.</p>
+<p>The goal of this exercise is to play Pac-Man using fruit as our arrow buttons. How can this work? We humans are conductive, and therefore by touching the fruit you'll close a circuit. You will use fruit (that is also conductive) 
+as your four arrow keys: &lt;-, ^, -&gt;, v. You may actually use anything 
+you like (be creative) as long as it’s a semi-conductor. When you press
+ an arrow, detect it with the Arduino controller and fake the keyboard
+ button input accordingly.</p>
 
 <h2>
 <a id="user-content-steps" class="anchor" href="#steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Steps</h2>
@@ -882,19 +882,19 @@ on an arrow, detect it with the Arduino controller and fake the keyboard
 <li>Connect the Arduino as described in the following <a href="resources/pacman-arduino-skatch.png">diagram</a>
 
 <ul>
-<li>What we want to do is use the semi-conductors and keys for our keyboard.</li>
+<li>What we want to do is use the semi-conductors as keys for our keyboard.</li>
 <li>You will need to connect only the wires in RED (the rest is done for you).</li>
 </ul>
 </li>
 <li>Complete the code in the Arduino IDE
 
 <ul>
-<li>Arduino comes with a build in framework that runs C/C++ code.</li>
+<li>Arduino comes with a built-in framework that runs C/C++ code.</li>
 <li>Any Arduino program has a <code>setup()</code> and <code>loop()</code> functions. <code>setup()</code> is called once and <code>loop()</code> is called all the time (like a <code>while(true)</code> loop).</li>
 <li>What your code needs to do is:
 
 <ol>
-<li>detect the inputs form your arrows (semi-conductors)</li>
+<li>detect the inputs generated whenever you touch the fruit (semi-conductors)</li>
 <li>Press the required key using the <code>Keyboard</code> API</li>
 <li>See more instructions and examples in the code.</li>
 </ol>
@@ -902,6 +902,6 @@ on an arrow, detect it with the Arduino controller and fake the keyboard
 </ul>
 </li>
 <li>Upload the code to the Arduino controller by pressing the <em>upload</em> button</li>
-<li> Play pacman <a href="resources/neave_pacman_widgetbox.swf">pacman</a> :)</li>
+<li> Play <a href="resources/neave_pacman_widgetbox.swf">pacman</a> and try not to get an embarrassingly low score :)</li>
 </ol>
 </article></body></html>
